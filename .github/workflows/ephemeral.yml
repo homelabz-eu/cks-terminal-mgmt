@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize, reopened, closed]
 
 env:
-  REGISTRY: registry.fullstack.pw
+  REGISTRY: registry.toolz.fullstack.pw
   IMAGE_NAME: library/cks-terminal-mgmt
   VAULT_ADDR: https://vault.toolz.fullstack.pw
 

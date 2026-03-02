@@ -1,7 +1,7 @@
 .PHONY: build run test clean docker-build docker-run
 
 APP_NAME := cks-terminal-mgmt
-IMAGE := registry.fullstack.pw/library/$(APP_NAME)
+IMAGE := registry.toolz.fullstack.pw/library/$(APP_NAME)
 
 build:
 	go build -o $(APP_NAME) ./cmd/server

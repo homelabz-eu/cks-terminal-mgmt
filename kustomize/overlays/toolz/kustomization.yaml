@@ -5,7 +5,7 @@ resources:
   - ../../ephemeral-base
 
 images:
-  - name: registry.fullstack.pw/library/cks-terminal-mgmt
+  - name: registry.toolz.fullstack.pw/library/cks-terminal-mgmt
     newTag: 19aa6d1a3c61a83e6ab188fa66b93180bf35af24
 
 patches:

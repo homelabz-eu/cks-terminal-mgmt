@@ -7,7 +7,7 @@ resources:
   - ../../ephemeral-base
 
 images:
-  - name: registry.fullstack.pw/library/cks-terminal-mgmt
+  - name: registry.toolz.fullstack.pw/library/cks-terminal-mgmt
     newTag: pr-will-be-replaced
 
 patches:
