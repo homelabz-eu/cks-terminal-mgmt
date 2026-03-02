@@ -7,7 +7,7 @@ on:
 env:
   REGISTRY: registry.fullstack.pw
   IMAGE_NAME: library/cks-terminal-mgmt
-  VAULT_ADDR: https://vault.fullstack.pw
+  VAULT_ADDR: https://vault.toolz.fullstack.pw
 
 permissions:
   contents: write
