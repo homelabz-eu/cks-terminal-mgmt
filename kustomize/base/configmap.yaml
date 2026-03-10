@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: cks-terminal-mgmt-config
 data:
-  ENVIRONMENT: "sandboxy"
+  ENVIRONMENT: "toolz"
   LOG_LEVEL: "INFO"

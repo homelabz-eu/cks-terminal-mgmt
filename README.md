@@ -8,10 +8,10 @@ Terminal management microservice for the CKS (Certified Kubernetes Security Spec
 Browser (iframe) → cks-terminal-mgmt → SSH → KubeVirt VM
                         │
                    Go service + ttyd
-                   (sandboxy cluster)
+                   (toolz cluster)
 ```
 
-The service runs on the sandboxy cluster alongside KubeVirt VMs, providing direct SSH access without requiring virtctl. It spawns ttyd processes on-demand for each terminal connection, which handle xterm.js rendering, WebSocket communication, and terminal resize natively.
+The service runs on the toolz cluster alongside KubeVirt VMs, providing direct SSH access without requiring virtctl. It spawns ttyd processes on-demand for each terminal connection, which handle xterm.js rendering, WebSocket communication, and terminal resize natively.
 
 ## API
 
@@ -74,7 +74,7 @@ make docker-run
 
 ## Deployment
 
-Deployed to the **sandboxy** cluster via ArgoCD, using kustomize overlays.
+Deployed to the **toolz** cluster via ArgoCD, using kustomize overlays.
 
 ### Kustomize Structure
 
@@ -83,12 +83,12 @@ kustomize/
 ├── base/              # ArgoCD-managed (Istio VirtualService)
 ├── ephemeral-base/    # PR environments (Traefik Ingress)
 └── overlays/
-    ├── sandboxy/      # Production overlay
+    ├── toolz/      # Production overlay
     └── ephemeral/     # PR environment overlay
 ```
 
 ### CI/CD
 
-- **Push to main**: Build image, push to Harbor, update sandboxy kustomization tag
+- **Push to main**: Build image, push to Harbor, update toolz kustomization tag
 - **PR opened**: Create ephemeral K3s cluster, deploy PR build, post URL as comment
 - **PR closed**: Destroy ephemeral cluster and release IP pool slot

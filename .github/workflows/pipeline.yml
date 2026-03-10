@@ -17,11 +17,11 @@ jobs:
       app-name: "cks-terminal-mgmt"
       app-dockerfile: "Dockerfile"
 
-  update-sandboxy-kustomization:
+  update-toolz-kustomization:
     needs: [docker-build-and-push]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: self-hosted
-    name: Deploy cks-terminal-mgmt to sandboxy
+    name: Deploy cks-terminal-mgmt to toolz
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -29,23 +29,23 @@ jobs:
           token: ${{ secrets.RUNNER }}
           fetch-depth: 0
 
-      - name: Update sandboxy kustomization with new image tag
+      - name: Update toolz kustomization with new image tag
         run: |
           VERSION="${{ github.sha }}"
-          KUSTOMIZATION_FILE="kustomize/overlays/sandboxy/kustomization.yaml"
+          KUSTOMIZATION_FILE="kustomize/overlays/toolz/kustomization.yaml"
 
           if [ ! -f "$KUSTOMIZATION_FILE" ]; then
             echo "Warning: $KUSTOMIZATION_FILE not found, skipping"
             exit 0
           fi
 
-          echo "Updating cks-terminal-mgmt sandboxy to version: $VERSION"
+          echo "Updating cks-terminal-mgmt toolz to version: $VERSION"
           sed -i "s/newTag: .*/newTag: $VERSION/" "$KUSTOMIZATION_FILE"
 
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           git add "$KUSTOMIZATION_FILE"
-          git commit -m "chore(cks-terminal-mgmt): deploy $VERSION to sandboxy [skip ci]" || echo "No changes to commit"
+          git commit -m "chore(cks-terminal-mgmt): deploy $VERSION to toolz [skip ci]" || echo "No changes to commit"
           git push || echo "Nothing to push"
 
   versioning:
