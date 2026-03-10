@@ -1,4 +1,4 @@
-module github.com/fullstack-pw/cks-terminal-mgmt
+module github.com/homelabz-eu/cks-terminal-mgmt
 
 go 1.25.6
 
