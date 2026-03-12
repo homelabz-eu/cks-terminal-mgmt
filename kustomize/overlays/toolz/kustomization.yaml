@@ -15,13 +15,13 @@ patches:
     patch: |-
       - op: replace
         path: /spec/rules/0/host
-        value: terminal.toolz.cks.homelabz.eu
+        value: terminal.toolz.homelabz.eu
       - op: replace
         path: /spec/tls/0/hosts/0
-        value: terminal.toolz.cks.homelabz.eu
+        value: terminal.toolz.homelabz.eu
       - op: replace
         path: /metadata/annotations/external-dns.alpha.kubernetes.io~1hostname
-        value: terminal.toolz.cks.homelabz.eu
+        value: terminal.toolz.homelabz.eu
       - op: replace
         path: /spec/ingressClassName
         value: nginx
