@@ -179,7 +179,7 @@ jobs:
 
           kubectl kustomize kustomize/overlays/ephemeral \
             | sed "s|${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:pr-will-be-replaced|${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${IMAGE_TAG}|" \
-            | sed "s|dev.terminal.cks.homelabz.eu|${DNS_NAME}|g" \
+            | sed "s|dev.terminal.toolz.homelabz.eu|${DNS_NAME}|g" \
             | kubectl apply -f -
 
           kubectl rollout status deployment/cks-terminal-mgmt \

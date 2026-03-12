@@ -6,7 +6,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   hosts:
-    - "terminal.cks.homelabz.eu"
+    - "terminal.toolz.homelabz.eu"
   gateways:
     - istio-system/default-gateway
   http:
