@@ -5,7 +5,7 @@ resources:
   - ../../ephemeral-base
 
 images:
-  - name: registry.toolz.homelabz.eu/library/cks-terminal-mgmt
+  - name: registry.homelabz.eu/library/cks-terminal-mgmt
     newTag: 3c2de13244a9d74e747e69493f9e53177351fba2
 
 patches:
