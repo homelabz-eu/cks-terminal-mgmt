@@ -6,7 +6,7 @@ resources:
 
 images:
   - name: registry.homelabz.eu/library/cks-terminal-mgmt
-    newTag: 3c2de13244a9d74e747e69493f9e53177351fba2
+    newTag: c47995bee93e3a41b581f13ad1a003ace42715d8
 
 patches:
   - target:
